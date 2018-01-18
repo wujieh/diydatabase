@@ -1,9 +1,13 @@
 import solverconfiguration.PropertiesContext;
 import web.UserWeb;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Controller {
+
+    static boolean isEnable = true;
+
     Controller() {
         super();
     }
@@ -14,6 +18,14 @@ public class Controller {
             case "ADD":
                 System.out.println(PropertiesContext.getValue("ADD"));
                 u.saveUser();
+                break;
+            case "DELETE":
+                System.out.println(PropertiesContext.getValue("DELETE"));
+                u.deleteUserById();
+                break;
+            case "SELECT":
+                System.out.println(PropertiesContext.getValue("SELECT"));
+                u.selectUser();
                 break;
         }
     }

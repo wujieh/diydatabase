@@ -22,4 +22,16 @@ public class UserWeb {
         UserDao userDao = new UserDao();
         userDao.save(u);
     }
+
+    public void deleteUserById() {
+        Scanner scanner = new Scanner(System.in);
+        UserDao userDao = new UserDao();
+        userDao.delete(scanner.nextLine().trim());
+    }
+
+    public void selectUser() {
+        Scanner scanner = new Scanner(System.in);
+        UserDao userDao = new UserDao();
+        userDao.select(scanner.nextLine().trim());
+    }
 }
